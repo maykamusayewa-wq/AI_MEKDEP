@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="tk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI MEKDEP - Ders</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f3f8ff;
+    color:#172554;
+}
+
+header{
+    background:linear-gradient(135deg,#0756b8,#08a88a);
+    color:white;
+    padding:20px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+header h2{
+    margin:0;
+}
+
+.back{
+    background:white;
+    color:#0756b8;
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.container{
+    width:86%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.lesson-title{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 6px 20px rgba(0,0,0,.07);
+    margin-bottom:30px;
+}
+
+.lesson-title h1{
+    color:#0756b8;
+    margin-top:0;
+}
+
+.info{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.badge{
+    background:#e0f2fe;
+    color:#0756b8;
+    padding:10px 18px;
+    border-radius:20px;
+    font-weight:bold;
+}
+
+.options{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:30px 20px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 6px 20px rgba(0,0,0,.07);
+    cursor:pointer;
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.icon{
+    font-size:50px;
+}
+
+.card h3{
+    color:#0756b8;
+}
+
+.ai-box{
+    margin-top:35px;
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 6px 20px rgba(0,0,0,.07);
+}
+
+.ai-box h2{
+    color:#0756b8;
+}
+
+textarea{
+    width:100%;
+    min-height:110px;
+    resize:vertical;
+    padding:15px;
+    border:1px solid #cbd5e1;
+    border-radius:12px;
+    font-size:16px;
+}
+
+.ask{
+    margin-top:15px;
+    background:linear-gradient(135deg,#0756b8,#08a88a);
+    border:none;
+    color:white;
+    padding:13px 25px;
+    border-radius:10px;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.answer{
+    display:none;
+    margin-top:20px;
+    background:#ecfff8;
+    border-left:5px solid #08a88a;
+    padding:20px;
+    border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>🎓 AI MEKDEP</h2>
+    <a class="back" href="/student">← Yza</a>
+</header>
+
+<div class="container">
+
+<div class="lesson-title">
+
+    <h1>📚 Okuw merkezi</h1>
+
+    <div class="info">
+        <div class="badge">
+            Synp: {{ class_number }}
+        </div>
+
+        <div class="badge">
+            Ders: {{ subject }}
+        </div>
+    </div>
+
+</div>
+
+<div class="options">
+
+    <div class="card" onclick="chooseOption('Tema düşündirmek')">
+        <div class="icon">💡</div>
+        <h3>Temany düşündir</h3>
+        <p>Temany ýönekeý we düşnükli görnüşde öwren.</p>
+    </div>
+
+    <div class="card" onclick="chooseOption('Mysal çözmek')">
+        <div class="icon">✏️</div>
+        <h3>Mysal çöz</h3>
+        <p>Mysallary ädimme-ädim çözmegi öwren.</p>
+    </div>
+
+    <div class="card" onclick="chooseOption('AI-den soramak')">
+        <div class="icon">🤖</div>
+        <h3>AI-den sora</h3>
+        <p>Düşünmedik soragyňy AI kömekçä ber.</p>
+    </div>
+
+    <div class="card" onclick="chooseOption('Test çözmek')">
+        <div class="icon">📝</div>
+        <h3>Test çöz</h3>
+        <p>Bilimiňi test arkaly barla.</p>
+    </div>
+
+</div>
+
+<div class="ai-box">
+
+    <h2>🤖 AI kömekçi</h2>
+
+    <p id="instruction">
+        Soragyňy ýa-da öwrenmek isleýän temaňy ýaz.
+    </p>
+
+    <textarea id="question"
+    placeholder="Mysal: Droblary goşmagy düşündir..."></textarea>
+
+    <br>
+
+    <button class="ask" onclick="askAI()">
+        Soragy iber
+    </button>
+
+    <div class="answer" id="answer"></div>
+
+</div>
+
+</div>
+
+<script>
+
+function chooseOption(option){
+
+    document.getElementById("instruction").innerText =
+    option + " saýlandy. Soragyňy aşakda ýaz:";
+
+    document.getElementById("question").focus();
+}
+
+function askAI(){
+
+    let question =
+    document.getElementById("question").value.trim();
+
+    let answer =
+    document.getElementById("answer");
+
+    if(question === ""){
+        alert("Ilki soragyňy ýaz.");
+        return;
+    }
+
+    answer.style.display = "block";
+
+    answer.innerHTML =
+    "<strong>🤖 AI kömekçi:</strong><br><br>" +
+    "Sorag kabul edildi: <b>" +
+    question +
+    "</b><br><br>" +
+    "AI ulgamyny indiki tapgyrda birikdireris.";
+}
+
+</script>
+
+</body>
+</html>

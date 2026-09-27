@@ -1,0 +1,6 @@
+# Local/Render environment variables
+FLASK_SECRET_KEY=change-this-to-a-long-random-secret
+OPENAI_API_KEY=sk-...
+OPENAI_MODEL=gpt-5.6-luna
+# On Render with persistent disk:
+AI_MEKDEP_DATA_DIR=/var/data

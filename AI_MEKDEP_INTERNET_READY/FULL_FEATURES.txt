@@ -1,0 +1,13 @@
+AI MEKDEP — 6 BÖLÜM BARLAGY
+
+[OK] Okuwçy
+[OK] Mugallym
+[OK] Dersler
+[OK] Testler
+[OK] AI kömekçi
+[OK] Netijeler
+
+Okuwçy testi tabşyranda ady bilen netije maglumat bazasyna ýazylýar.
+Mugallym soňky netijeleri dashboard-da görýär.
+AI kömekçi saýlanan synp/ders/tema kontekstini OpenAI-a geçirýär.
+Test ýok tema üçin OpenAI arkaly 5 test döredip bolýar.

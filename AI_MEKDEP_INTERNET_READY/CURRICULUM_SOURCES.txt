@@ -1,0 +1,22 @@
+AI MEKDEP — ulanylan okuw maksatnamalary (täzeden seljerilen)
+Matematika | 2026 | 5: 170 sagat, 6: 170 sagat, 7: 170 sagat, 8: 136 sagat, 9: 136 sagat, 10: 136 sagat, 11: 136 sagat, 12: 136 sagat | track: umumy
+Türkmen dili | 2025 | 5: 170 sagat, 6: 170 sagat, 7: 136 sagat, 8: 102 sagat, 9: 68 sagat, 10: 68 sagat, 11: 34 sagat, 12: 68 sagat | track: umumy
+Rus dili | 2025 | 5: 170 sagat, 6: 136 sagat, 7: 102 sagat, 8: 68 sagat, 9: 34 sagat, 10: 34 sagat, 11: 34 sagat, 12: 34 sagat | track: umumy
+Edebiýat | 2025 | 5: 102 sagat, 6: 102 sagat, 7: 102 sagat, 8: 102 sagat, 9: 102 sagat, 10: 102 sagat, 11: 68 sagat, 12: 68 sagat | track: umumy
+Iňlis dili | 2018 | 5: 102 sagat, 6: 102 sagat, 7: 102 sagat, 8: 102 sagat, 9: 102 sagat, 10: 102 sagat, 11: 102 sagat, 12: 102 sagat | track: umumy
+Informatika | 2022 | 5: 34 sagat, 6: 34 sagat, 7: 34 sagat, 8: 34 sagat, 9: 34 sagat, 10: 34 sagat, 11: 68 sagat, 12: 68 sagat | track: umumy
+Fizika | 2018 | 7: 68 sagat, 8: 68 sagat, 9: 102 sagat, 10: 136 sagat, 11: 68 sagat, 12: 68 sagat | track: umumy
+Himiýa | 2018 | 8: 102 sagat, 9: 102 sagat, 10: 102 sagat, 11: 34 sagat, 12: 68 sagat | track: umumy
+Biologiýa | 2018 | 6: 68 sagat, 7: 68 sagat, 8: 68 sagat, 9: 68 sagat, 10: 68 sagat, 11: 34 sagat, 12: 34 sagat | track: umumy/takyk-ynsanperwerlik (34 sagat XI-XII)
+Geografiýa | 2018 | 6: 68 sagat, 7: 68 sagat, 8: 68 sagat, 9: 68 sagat, 10: 68 sagat, 11: 34 sagat, 12: 34 sagat | track: umumy
+Türkmenistanyň taryhy | 2018 | 5: 68 sagat, 8: 68 sagat, 9: 68 sagat, 10: 68 sagat, 11: 34 sagat, 12: 34 sagat | track: umumy
+Ählumumy taryh | 2018 | 6: 68 sagat, 7: 68 sagat, 9: 68 sagat, 10: 34 sagat, 11: 34 sagat, 12: 34 sagat | track: umumy
+Ýaşaýyş-durmuş esaslary | 2021 | 5: 34 sagat, 6: 34 sagat, 7: 34 sagat, 8: 34 sagat, 9: 34 sagat, 10: 34 sagat | track: umumy
+Proýektirlemegiň esaslary | 2020 | 8: 34 sagat, 9: 34 sagat | track: umumy
+IKIT | 2022 | 11: 34 sagat, 12: 34 sagat | track: umumy
+Modelirleme we grafika | 2021 | 11: 68 sagat, 12: 68 sagat | track: Takyk ugur
+Türkmenistanyň medeni mirasy | 2018 | 11: 34 sagat | track: umumy
+Ekologiýa | 2018 | 11: 34 sagat, 12: 34 sagat | track: umumy
+Ykdysadyýetiň esaslary | 2018 | 11: 34 sagat, 12: 34 sagat | track: umumy
+Astronomiýa | 2018 | 11: 34 sagat | track: umumy
+Dünýä medeniýeti | 2018 | 12: 34 sagat | track: ynsanperwerlik

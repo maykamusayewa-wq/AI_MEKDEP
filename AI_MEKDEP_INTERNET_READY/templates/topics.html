@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="tk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI MEKDEP — {{ subject }}</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:
+        linear-gradient(180deg, #eaf7ff 0, #f7fbff 420px, #eef7fd 100%);
+    color: #102040;
+}
+
+/* =========================================
+   ÝOKARKY BANNER
+========================================= */
+
+.hero {
+    height: 185px;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 20% 20%, #11c7ff 0, transparent 30%),
+        linear-gradient(110deg, #087fe9, #244eea 55%, #7a28ef);
+
+    color: white;
+}
+
+.hero::before {
+    content: "📚  ✏️";
+    position: absolute;
+    left: 35px;
+    top: 40px;
+
+    font-size: 55px;
+    opacity: .9;
+}
+
+.hero-content {
+    max-width: 1420px;
+    height: 100%;
+
+    margin: auto;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-title {
+    position: relative;
+    z-index: 5;
+
+    text-align: center;
+    margin-right: 120px;
+}
+
+.hero-title h1 {
+    margin: 0;
+
+    font-size: 58px;
+    line-height: 1;
+
+    font-weight: 900;
+    letter-spacing: 2px;
+
+    text-shadow: 0 4px 7px rgba(0,0,0,.25);
+}
+
+.hero-title p {
+    margin: 10px 0 0;
+
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.hero-students {
+    position: absolute;
+
+    right: 180px;
+    bottom: 0;
+
+    width: 340px;
+    height: 170px;
+
+    overflow: hidden;
+}
+
+.hero-students img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 35px 35px 0 0;
+}
+
+.home-button {
+    position: absolute;
+
+    right: 20px;
+    top: 25px;
+
+    background: white;
+    color: #075bc2;
+
+    padding: 14px 22px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+    font-weight: 800;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,.15);
+
+    z-index: 10;
+}
+
+/* =========================================
+   ESASY KONTEÝNER
+========================================= */
+
+.container {
+    width: 94%;
+    max-width: 1400px;
+
+    margin: 0 auto 60px;
+}
+
+.back-row {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.back {
+    display: inline-block;
+
+    background: white;
+    color: #0763cc;
+
+    padding: 11px 22px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+    font-weight: 800;
+
+    box-shadow: 0 4px 14px rgba(20,70,120,.10);
+}
+
+/* =========================================
+   SYNYP KARTASY
+========================================= */
+
+.course-info {
+    background: rgba(255,255,255,.96);
+
+    border-radius: 24px;
+
+    padding: 14px 25px;
+
+    min-height: 125px;
+
+    display: flex;
+    align-items: center;
+
+    box-shadow: 0 6px 22px rgba(25,80,130,.10);
+
+    margin-bottom: 20px;
+}
+
+.class-box {
+    width: 115px;
+    height: 100px;
+
+    min-width: 115px;
+
+    border-radius: 25px;
+
+    background: linear-gradient(145deg, #a7ecff, #e3fbff);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 57px;
+    font-weight: 900;
+
+    color: #0864d4;
+
+    margin-right: 28px;
+}
+
+.course-name {
+    min-width: 340px;
+}
+
+.course-name h2 {
+    margin: 0 0 6px;
+
+    color: #075dcb;
+
+    font-size: 32px;
+}
+
+.course-name p {
+    margin: 0;
+
+    font-size: 21px;
+}
+
+.stats {
+    flex: 1;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+
+    margin-left: 30px;
+}
+
+.stat {
+    height: 82px;
+
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 12px 15px;
+
+    gap: 13px;
+}
+
+.stat-icon {
+    width: 55px;
+    height: 55px;
+
+    min-width: 55px;
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+}
+
+.stat-text small {
+    display: block;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.stat-text strong {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 25px;
+}
+
+.blue-stat {
+    background: #e0f4ff;
+}
+
+.blue-stat .stat-icon {
+    background: #0787e9;
+}
+
+.violet-stat {
+    background: #f1e8ff;
+    color: #5f2aa8;
+    text-decoration: none;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.violet-stat .stat-icon {
+    background: #7c3aed;
+}
+
+.violet-stat:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(124,58,237,.18);
+}
+
+.green-stat {
+    background: #ddfaef;
+}
+
+.green-stat .stat-icon {
+    background: #09b878;
+}
+
+.pink-stat {
+    background: #ffe3f2;
+}
+
+.pink-stat .stat-icon {
+    background: #ed318b;
+}
+
+/* =========================================
+   BÖLÜM
+========================================= */
+
+.section {
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    margin-bottom: 18px;
+
+    background: rgba(255,255,255,.55);
+
+    box-shadow: 0 5px 18px rgba(30,80,120,.08);
+}
+
+.section-header {
+    min-height: 55px;
+
+    padding: 9px 18px;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 21px;
+    font-weight: 850;
+}
+
+.section-badge {
+    width: 45px;
+    height: 45px;
+
+    min-width: 45px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    font-size: 20px;
+
+    margin-right: 15px;
+}
+
+.section-icon {
+    margin-left: auto;
+
+    font-size: 30px;
+}
+
+/* Bölümleriň reňkleri */
+
+.section-color-1 .section-header {
+    background: linear-gradient(90deg, #d3edff, #e9f7ff);
+    color: #0761c8;
+}
+
+.section-color-1 .section-badge {
+    background: #0879df;
+}
+
+.section-color-2 .section-header {
+    background: linear-gradient(90deg, #d0f8e9, #e8fff6);
+    color: #08765a;
+}
+
+.section-color-2 .section-badge {
+    background: #07966d;
+}
+
+.section-color-3 .section-header {
+    background: linear-gradient(90deg, #ffd9ee, #fff0f8);
+    color: #bd176e;
+}
+
+.section-color-3 .section-badge {
+    background: #d4007d;
+}
+
+.section-color-4 .section-header {
+    background: linear-gradient(90deg, #ffedb8, #fff8df);
+    color: #a76600;
+}
+
+.section-color-4 .section-badge {
+    background: #c77a00;
+}
+
+.section-color-5 .section-header {
+    background: linear-gradient(90deg, #e6ddff, #f4efff);
+    color: #6534bd;
+}
+
+.section-color-5 .section-badge {
+    background: #7047d7;
+}
+
+.section-color-6 .section-header {
+    background: linear-gradient(90deg, #d7f5ff, #effbff);
+    color: #08799c;
+}
+
+.section-color-6 .section-badge {
+    background: #0996bd;
+}
+
+.section-color-7 .section-header {
+    background: linear-gradient(90deg, #e5f7d5, #f4ffe9);
+    color: #477c16;
+}
+
+.section-color-7 .section-badge {
+    background: #65a52a;
+}
+
+/* =========================================
+   TEMALAR
+========================================= */
+
+.topic-grid {
+    padding: 8px 13px 13px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+.topic {
+    min-height: 92px;
+
+    background: white;
+
+    border-radius: 17px;
+
+    padding: 10px 12px;
+
+    display: flex;
+    align-items: center;
+
+    color: #102040;
+    text-decoration: none;
+
+    border: 1px solid #edf2f7;
+
+    box-shadow: 0 3px 10px rgba(25,65,105,.06);
+
+    transition: .2s;
+}
+
+.topic:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 18px rgba(20,75,130,.15);
+
+    border-color: #b9d9ff;
+}
+
+.topic-number {
+    width: 48px;
+    height: 48px;
+
+    min-width: 48px;
+
+    border-radius: 50%;
+
+    background: #e1f2ff;
+    color: #0862c6;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 19px;
+    font-weight: 900;
+
+    margin-right: 12px;
+}
+
+.topic-icon {
+    width: 62px;
+    min-width: 62px;
+
+    text-align: center;
+
+    font-size: 39px;
+
+    margin-right: 10px;
+}
+
+.topic-content {
+    flex: 1;
+}
+
+.topic-name {
+    font-size: 15px;
+    font-weight: 800;
+
+    line-height: 1.25;
+}
+
+.hours {
+    margin-top: 6px;
+
+    color: #68778d;
+
+    font-size: 13px;
+}
+
+.arrow {
+    color: #0871db;
+
+    font-size: 31px;
+
+    margin-left: 7px;
+}
+
+/* =========================================
+   BOŞ MAGLUMAT
+========================================= */
+
+.empty {
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 20px;
+
+    text-align: center;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .hero-students {
+        opacity: .45;
+        right: 30px;
+    }
+
+    .hero-title {
+        margin-right: 0;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .course-info {
+        align-items: flex-start;
+    }
+
+    .topic-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+
+    .hero {
+        height: 145px;
+    }
+
+    .hero-title h1 {
+        font-size: 38px;
+    }
+
+    .hero-title p {
+        font-size: 20px;
+    }
+
+    .hero-students {
+        display: none;
+    }
+
+    .home-button {
+        display: none;
+    }
+
+    .course-info {
+        display: block;
+    }
+
+    .class-box {
+        margin-bottom: 15px;
+    }
+
+    .stats {
+        margin: 20px 0 0;
+    }
+
+    .topic-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ========================================
+     HEADER
+========================================= -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-title">
+
+            <h1>AI MEKDEP</h1>
+
+            <p>Okuw temalary</p>
+
+        </div>
+
+
+        <div class="hero-students">
+
+            <img
+                src="{{ url_for(
+                    'static',
+                    filename='images/students.png'
+                ) }}"
+                alt="Okuwçylar"
+            >
+
+        </div>
+
+
+        <a href="/" class="home-button">
+            🏠 Baş sahypa
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+
+    <!-- YZA -->
+
+    <div class="back-row">
+
+        <a href="/student" class="back">
+            ← Yza dolan
+        </a>
+
+    </div>
+
+
+    <!-- =====================================
+         SYNYP MAGLUMATY
+    ====================================== -->
+
+    <section class="course-info">
+
+
+        <div class="class-box">
+            {{ class_number }}
+        </div>
+
+
+        <div class="course-name">
+
+            <h2>
+                {{ class_number }}-nji synp
+            </h2>
+
+            <p>
+                <strong>Ders:</strong>
+                {{ subject }}
+            </p>
+            {% if course and course['source_year'] %}
+            <p style="margin-top:6px;color:#64748b;font-size:14px;">
+                Maksatnama: {{ course['source_year'] }}{% if course['track'] %} · {{ course['track'] }}{% endif %}
+            </p>
+            {% endif %}
+
+        </div>
+
+
+        {% if topics %}
+
+            {% set info =
+                namespace(
+                    sections=[],
+                    total_hours=0
+                )
+            %}
+
+
+            {% for item in topics %}
+
+                {% if item['section']
+                    not in info.sections %}
+
+                    {% set info.sections =
+                        info.sections +
+                        [item['section']]
+                    %}
+
+                {% endif %}
+
+                {% if item['hours'] %}
+
+                    {% set info.total_hours =
+                        info.total_hours +
+                        item['hours']
+                    %}
+
+                {% endif %}
+
+            {% endfor %}
+
+
+            <div class="stats">
+
+
+                <a class="stat violet-stat" href="#teacher-tests" title="Mugallymyň döreden testlerini görkez">
+
+                    <div class="stat-icon">
+                        📝
+                    </div>
+
+                    <div class="stat-text">
+
+                        <small>Testler</small>
+
+                        <strong>
+                            {{ teacher_tests|length }}
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+                <div class="stat blue-stat">
+
+                    <div class="stat-icon">
+                        📖
+                    </div>
+
+                    <div class="stat-text">
+
+                        <small>Bölümler</small>
+
+                        <strong>
+                            {{ info.sections|length }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat green-stat">
+
+                    <div class="stat-icon">
+                        📋
+                    </div>
+
+                    <div class="stat-text">
+
+                        <small>Temalar</small>
+
+                        <strong>
+                            {{ topics|length }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat pink-stat">
+
+                    <div class="stat-icon">
+                        🕘
+                    </div>
+
+                    <div class="stat-text">
+
+                        <small>Jemi sagat</small>
+
+                        <strong>{% if course and course['total_hours'] %}{{ course['total_hours'] }}{% else %}{{ info.total_hours }}{% endif %}</strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        {% endif %}
+
+    </section>
+
+    <section id="teacher-tests" style="background:#fff;border-radius:22px;padding:20px;margin-bottom:22px;box-shadow:0 5px 18px rgba(20,70,120,.09);scroll-margin-top:18px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px;">
+            <div><h2 style="margin:0;color:#7a35c7;">📝 Mugallymyň testleri</h2><p style="margin:5px 0 0;color:#667085;">Şu synp we ders üçin mugallymlar tarapyndan taýýarlanan testler</p></div>
+            <div style="background:#f2eaff;color:#6d35b5;padding:8px 12px;border-radius:18px;font-weight:800;">{{ teacher_tests|length }} test</div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;">
+        {% for tt in teacher_tests %}
+            <a href="/teacher-test/{{tt.id}}" style="text-decoration:none;color:#172033;background:linear-gradient(145deg,#fbf8ff,#fff);border:1px solid #e8dcff;border-radius:16px;padding:15px;display:block;">
+                <div style="font-weight:850;font-size:17px;">{{tt.title}}</div>
+                {% if tt.description %}<div style="color:#667085;margin-top:5px;font-size:14px;">{{tt.description}}</div>{% endif %}
+                <div style="margin-top:9px;color:#7a35c7;font-size:13px;font-weight:750;">👩‍🏫 {{tt.teacher_name}} · {{tt.question_count}} sorag</div>
+            </a>
+        {% endfor %}
+        {% if teacher_tests %}
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;">
+        {% for tt in teacher_tests %}
+            <a href="/teacher-test/{{tt.id}}" style="text-decoration:none;color:#172033;background:linear-gradient(145deg,#fbf8ff,#fff);border:1px solid #e8dcff;border-radius:16px;padding:15px;display:block;">
+                <div style="font-weight:850;font-size:17px;">{{tt.title}}</div>
+                {% if tt.description %}<div style="color:#667085;margin-top:5px;font-size:14px;">{{tt.description}}</div>{% endif %}
+                <div style="margin-top:9px;color:#7a35c7;font-size:13px;font-weight:750;">👩‍🏫 {{tt.teacher_name}} · {{tt.question_count}} sorag</div>
+            </a>
+        {% endfor %}
+        </div>
+        {% else %}
+        <div style="background:#faf7ff;border:1px dashed #d9c6ff;border-radius:15px;padding:16px;color:#6b5b80;">
+            Häzir bu synp we ders üçin mugallym tarapyndan çap edilen test ýok. Mugallym test çap eden badyna şu ýerde peýda bolar.
+        </div>
+        {% endif %}
+    </section>
+
+
+    <!-- =====================================
+         BÖLÜMLER WE TEMALAR
+    ====================================== -->
+
+    {% if topics %}
+
+
+        {% set ns = namespace(
+            current_section='',
+            section_number=0,
+            topic_number=0,
+            open_section=false
+        ) %}
+
+
+        {% for item in topics %}
+
+
+            <!-- TÄZE BÖLÜM -->
+
+            {% if item['section']
+                != ns.current_section %}
+
+
+                {% if ns.open_section %}
+
+                        </div>
+                    </section>
+
+                {% endif %}
+
+
+                {% set ns.section_number =
+                    ns.section_number + 1
+                %}
+
+
+                {% set color_number =
+                    ((ns.section_number - 1) % 7) + 1
+                %}
+
+
+                <section
+                    class="section section-color-{{ color_number }}"
+                >
+
+
+                    <div class="section-header">
+
+
+                        <div class="section-badge">
+
+                            {{ ns.section_number }}
+
+                        </div>
+
+
+                        <span>
+
+                            {{ item['section'] }}
+
+                        </span>
+
+
+                        <div class="section-icon">
+
+                            {% if ns.section_number == 1 %}
+                                🖥️
+
+                            {% elif ns.section_number == 2 %}
+                                ⚙️
+
+                            {% elif ns.section_number == 3 %}
+                                🔀
+
+                            {% elif ns.section_number == 4 %}
+                                🔵
+
+                            {% elif ns.section_number == 5 %}
+                                🧊
+
+                            {% elif ns.section_number == 6 %}
+                                🌐
+
+                            {% else %}
+                                📚
+
+                            {% endif %}
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="topic-grid">
+
+
+                {% set ns.current_section =
+                    item['section']
+                %}
+
+                {% set ns.open_section = true %}
+
+
+            {% endif %}
+
+
+            <!-- TEMA -->
+
+            {% set ns.topic_number =
+                ns.topic_number + 1
+            %}
+
+
+            {% set t =
+                item['topic']|lower
+            %}
+
+
+            <a
+                class="topic"
+
+                href="/study?class={{ class_number }}&subject={{ subject }}&topic={{ item['id'] }}"
+            >
+
+
+                <div class="topic-number">
+
+                    {{ ns.topic_number }}
+
+                </div>
+
+
+                <div class="topic-icon">
+
+
+                    {% if 'howpsuzlyk' in t %}
+
+                        ⚠️
+
+
+                    {% elif 'windows' in t %}
+
+                        🪟
+
+
+                    {% elif 'operasion' in t %}
+
+                        ⚙️
+
+
+                    {% elif 'kompýuter' in t %}
+
+                        🖥️
+
+
+                    {% elif 'algoritm' in t %}
+
+                        🔀
+
+
+                    {% elif 'kibergiňişlik' in t
+                        or 'internet' in t %}
+
+                        🌐
+
+
+                    {% elif 'model' in t %}
+
+                        🧊
+
+
+                    {% elif 'graf' in t
+                        or 'gatnaşyk' in t
+                        or 'geçiş' in t %}
+
+                        🔗
+
+
+                    {% elif 'köplük' in t
+                        or 'obýekt' in t %}
+
+                        🔵
+
+
+                    {% elif 'iş stol' in t %}
+
+                        🖥️
+
+
+                    {% else %}
+
+                        📘
+
+
+                    {% endif %}
+
+
+                </div>
+
+
+                <div class="topic-content">
+
+
+                    <div class="topic-name">
+
+                        {{ item['topic'] }}
+
+                    </div>
+
+
+                    {% if item['hours'] %}
+
+                        <div class="hours">
+
+                            ◷
+                            {{ item['hours'] }}
+                            sagat
+
+                        </div>
+
+                    {% endif %}
+
+
+                </div>
+
+
+                <div class="arrow">
+                    ›
+                </div>
+
+
+            </a>
+
+
+        {% endfor %}
+
+
+        {% if ns.open_section %}
+
+                </div>
+            </section>
+
+        {% endif %}
+
+
+    {% else %}
+
+
+        <div class="empty">
+
+            <h2>📚 Tema tapylmady</h2>
+
+            <p>
+                Bu synp we ders üçin
+                temalar entek maglumat
+                bazasyna girizilmedi.
+            </p>
+
+        </div>
+
+
+    {% endif %}
+
+
+</main>
+
+</body>
+</html>

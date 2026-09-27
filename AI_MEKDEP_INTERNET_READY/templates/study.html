@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI MEKDEP — {{ topic['topic'] }}</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:#eef5fb;color:#172033}.header{min-height:120px;background:linear-gradient(120deg,#0877e6,#6d37ef);color:#fff;display:flex;align-items:center;justify-content:center;position:relative}.header h1{margin:0;font-size:38px}.header p{margin:6px 0 0;text-align:center;font-size:18px}.home-button{position:absolute;right:28px;top:35px;background:#fff;color:#1260c9;padding:12px 20px;border-radius:28px;text-decoration:none;font-weight:700;box-shadow:0 4px 15px rgba(0,0,0,.15)}
+.page{width:96%;max-width:1500px;margin:24px auto 60px;display:grid;grid-template-columns:220px minmax(620px,1fr) 220px;gap:22px;align-items:start}.side{position:sticky;top:20px}.side-card,.topic-card,.content-card{background:#fff;border-radius:22px;box-shadow:0 5px 18px rgba(0,0,0,.08)}.side-card{padding:18px;margin-bottom:18px;text-align:center}.side-card h3{margin:10px 0 8px;color:#1260c9;font-size:17px}.side-card p{margin:0;font-size:14px;line-height:1.5;color:#667085}.side-icon{font-size:52px}.side-list{text-align:left;margin-top:10px;padding:0;list-style:none}.side-list li{background:#f4f8ff;margin:7px 0;padding:9px 10px;border-radius:10px;font-size:13px;font-weight:600}.blue-side{background:linear-gradient(145deg,#e7f5ff,#fff)}.green-side{background:linear-gradient(145deg,#e7fff4,#fff)}.purple-side{background:linear-gradient(145deg,#f1eaff,#fff)}.yellow-side{background:linear-gradient(145deg,#fff7dc,#fff)}
+.main{min-width:0}.back{display:inline-block;margin-bottom:18px;background:#fff;color:#1260c9;padding:10px 18px;border-radius:25px;text-decoration:none;font-weight:700;box-shadow:0 3px 12px rgba(0,0,0,.08)}.topic-card{padding:25px 30px;margin-bottom:20px;position:relative;overflow:hidden}.topic-card::after{content:"💻";position:absolute;right:25px;top:18px;font-size:72px;opacity:.08}.topic-card h2{margin:0 0 10px;color:#0a62c9;font-size:28px}.topic-card p{margin:6px 0;font-size:17px}.section-name{color:#6b7280;font-size:15px}
+.lesson-card{background:#fff;border-radius:22px;padding:26px 30px;box-shadow:0 6px 22px rgba(0,0,0,.08);border-top:6px solid #1683e8;margin-bottom:20px}.lesson-title{display:flex;align-items:center;justify-content:space-between;gap:12px}.lesson-title h3{margin:0;color:#075fc5;font-size:24px}.badge{background:#e7f4ff;color:#075fc5;padding:6px 10px;border-radius:20px;font-size:12px;font-weight:700}.lesson-text{white-space:pre-wrap;line-height:1.75;color:#374151;margin-top:18px;font-size:16px}.notice{margin-top:14px;padding:14px;border-radius:14px;background:#fff6d9;color:#7a5600;line-height:1.5}.small{font-size:13px;color:#748095}.refresh-button{border:0;background:#edf4ff;color:#1260c9;padding:9px 14px;border-radius:18px;font-weight:700;cursor:pointer}
+.content-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.content-card{padding:22px;min-height:190px}.content-card h3{margin-top:0;font-size:21px}.blue{border-top:5px solid #1683e8}.green{border-top:5px solid #10b981}.purple{border-top:5px solid #8b5cf6}.orange{border-top:5px solid #f59e0b}.icon{font-size:38px;margin-bottom:10px}.text-content{color:#4b5563;line-height:1.7;white-space:pre-line}.empty-text{color:#8a94a5;font-style:italic}.action-button{display:inline-block;margin-top:15px;background:#126fd3;color:#fff;padding:10px 18px;border-radius:25px;text-decoration:none;font-weight:700;border:0;cursor:pointer}.question-box{width:100%;min-height:110px;border:1px solid #cfd8e6;border-radius:14px;padding:12px;font:inherit;resize:vertical}.ai-answer{margin-top:15px;padding:16px;border-radius:14px;background:#f1edff;border-left:5px solid #8b5cf6;white-space:pre-wrap;line-height:1.7}.suggestions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.suggestion{border:0;border-radius:18px;padding:8px 11px;background:#f3efff;color:#6238b5;cursor:pointer;font-weight:600}.source-list{display:grid;gap:10px;margin-top:12px}.source-item{display:flex;justify-content:space-between;gap:10px;align-items:center;background:#eef8ff;padding:11px 13px;border-radius:12px}.source-item a{color:#0756b8;font-weight:700;text-decoration:none}.practical-ai{margin-top:14px;padding:16px;border-radius:14px;background:#ecfff8;border-left:5px solid #10b981;white-space:pre-wrap;line-height:1.7}
+@media(max-width:1100px){.page{grid-template-columns:170px minmax(500px,1fr) 170px}}@media(max-width:850px){.page{display:block}.side{display:none}.content-grid{grid-template-columns:1fr}.home-button{display:none}}
+</style>
+</head>
+<body>
+<header class="header"><div><h1>AI MEKDEP</h1><p>Temany öwrenmek</p></div><a href="/" class="home-button">🏠 Baş sahypa</a></header>
+<div class="page">
+<aside class="side">
+  <div class="side-card blue-side"><div class="side-icon">📚</div><h3>Esasy maglumatlar</h3><ul class="side-list"><li>🎓 {{ topic['class_number'] }}-nji synp</li><li>📘 {{ topic['subject'] }}</li><li>📂 {{ topic['section'] }}</li>{% if topic['hours'] %}<li>🕘 {{ topic['hours'] }} sagat</li>{% endif %}{% if topic['source_year'] %}<li>📅 Maksatnama {{ topic['source_year'] }}</li>{% endif %}</ul></div>
+  <div class="side-card green-side"><div class="side-icon">💡</div><h3>Ýatda sakla</h3><p>Ilki giňişleýin düşündirişi oka, soň AI kömekçä düşnüksiz ýeriňi sorag görnüşinde ýaz.</p></div>
+  <div class="side-card purple-side"><div class="side-icon">🧠</div><h3>Öwreniş tertibi</h3><ul class="side-list"><li>1. Temany oka</li><li>2. Sorag ber</li><li>3. Mysaly ädimme-ädim düşündirt</li><li>4. Amaly işi ýerine ýetir</li><li>5. Test çöz</li></ul></div>
+</aside>
+<main class="main">
+  <a class="back" href="/topics?class={{ topic['class_number'] }}&subject={{ topic['subject'] }}">← Temalara dolan</a>
+  <section class="topic-card"><div class="section-name">{{ topic['section'] }}</div><h2>{{ topic['topic'] }}</h2><p><strong>Synp:</strong> {{ topic['class_number'] }}-nji synp</p><p><strong>Ders:</strong> {{ topic['subject'] }}</p>{% if topic['hours'] %}<p><strong>Sagat:</strong> {{ topic['hours'] }} sagat</p>{% endif %}</section>
+
+  <section class="lesson-card">
+    <div class="lesson-title"><h3>📖 Giňişleýin düşündiriş</h3>{% if lesson_cached %}<span class="badge">Ýatda saklanan AI sapagy</span>{% else %}<span class="badge">AI düşündirişi</span>{% endif %}</div>
+    {% if lesson_text %}<div class="lesson-text">{{ lesson_text }}</div>{% else %}<div class="notice"><strong>AI düşündirişi häzir döredilmedi.</strong><br>{{ lesson_error or 'OpenAI birikmesini barlaň.' }}</div>{% if topic['explanation'] %}<div class="lesson-text"><strong>Maksatnamadaky maglumat:</strong>\n{{ topic['explanation'] }}</div>{% endif %}{% endif %}
+    <form method="post" action="/regenerate-lesson"><input type="hidden" name="topic_id" value="{{ topic['id'] }}"><button class="refresh-button" type="submit">↻ Düşündirişi täzeden döret</button></form>
+    <p class="small">Giňişleýin düşündiriş AI tarapyndan taýýarlanýar; maksatnama maglumatlary we degişli elektron kitap bölekleri kontekst hökmünde ulanylýar.</p>
+  </section>
+
+  <section class="lesson-card" style="border-top-color:#08a88a">
+    <div class="lesson-title"><h3>📚 Bu tema degişli elektron kitap çeşmeleri</h3><a class="badge" href="/library">Kitaphana</a></div>
+    {% if book_sources %}<div class="source-list">{% for s in book_sources %}<div class="source-item"><span><strong>{{s.title}}</strong>{% if s.page_number %} • sah. {{s.page_number}}{% endif %}</span><a href="/library/book/{{s.book_id}}">Aç →</a></div>{% endfor %}</div>{% else %}<div class="notice">Bu synp we ders üçin kitaphanada entek degişli kitap tapylmady. Mugallym kitaby goşanda AI ony tema bilen awtomatik deňeşdirer.</div>{% endif %}
+  </section>
+
+  <div class="content-grid">
+    <section class="content-card green"><div class="icon">💡</div><h3>Maksatnamadaky mysal</h3>{% if topic['example_text'] %}<div class="text-content">{{ topic['example_text'] }}</div>{% else %}<p class="empty-text">Aýratyn mysal bazada ýok. AI kömekçä “Şu tema boýunça mysal düz we işlenşini düşündir” diýip sora.</p>{% endif %}</section>
+    <section class="content-card purple"><div class="icon">🧩</div><h3>AI döredýän amaly iş</h3><p class="text-content">AI maksatnama temasyna we kitaphanadaky degişli maglumatlara seredip, okuwçy üçin täze amaly iş taýýarlaýar.</p><form method="post" action="/generate-practical"><input type="hidden" name="topic_id" value="{{topic['id']}}"><button class="action-button" type="submit">✨ Täze amaly iş döret</button></form>{% if practical_ai %}<div class="practical-ai"><strong>Amaly iş:</strong><br>{{practical_ai}}</div>{% endif %}</section>
+    <section class="content-card orange" style="grid-column:1/-1"><div class="icon">🤖</div><h3>AI kömekçi — sorag ber</h3><p class="text-content">Tema boýunça islän zadyňy sora. “Mysalyň işlenşini düşündir” diýseň, AI ädimme-ädim düşündirer.</p>
+      <form method="post" action="/ask-ai"><input type="hidden" name="topic_id" value="{{ topic['id'] }}"><textarea id="question" class="question-box" name="question" placeholder="Mysal: Bu düşünjäni has ýönekeý düşündir. Ýa-da: Şu tema boýunça mysal düz we işlenşini ädimme-ädim düşündir.">{{ last_question or '' }}</textarea><div class="suggestions"><button class="suggestion" type="button" onclick="setQ('Bu temany has ýönekeý sözler bilen düşündir.')">Ýönekeý düşündir</button><button class="suggestion" type="button" onclick="setQ('Şu tema boýunça mysal düz we onuň işlenşini ädimme-ädim düşündir.')">Mysalyň işlenşini düşündir</button><button class="suggestion" type="button" onclick="setQ('Şu tema boýunça amaly ýumuş taýýarla we ýerine ýetirilişini düşündir.')">Amaly ýumuş ber</button></div><button class="action-button" type="submit">AI-den sora</button></form>
+      {% if ai_answer %}<div class="ai-answer"><strong>🤖 AI jogaby:</strong><br>{{ ai_answer }}</div>{% endif %}
+    </section>
+  </div>
+</main>
+<aside class="side">
+  <div class="side-card yellow-side"><div class="side-icon">🖥️</div><h3>AI näme edip biler?</h3><ul class="side-list"><li>✅ Temany başgaça düşündir</li><li>✅ Mysal düz</li><li>✅ Mysaly ädimme-ädim çöz</li><li>✅ Amaly ýumuş taýýarla</li><li>✅ Soraga jogap ber</li></ul></div>
+  <div class="side-card blue-side"><div class="side-icon">📝</div><h3>Test</h3><p>Temany öwreneniňden soň bilimiňi test bilen barla.</p><a class="action-button" href="/test?topic={{ topic['id'] }}">Teste başla</a></div>
+  <div class="side-card green-side"><div class="side-icon">🏆</div><h3>Maksat</h3><ul class="side-list"><li>✅ Temany düşünmek</li><li>✅ Sorag bermek</li><li>✅ Mysaly düşünmek</li><li>✅ Bilimi berkitmek</li></ul></div>
+</aside>
+</div>
+<script>function setQ(t){const q=document.getElementById('question');q.value=t;q.focus();}</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+Synp | Ders | Maksatnama sagady | Tema kartasy
+5 | Edebiýat | 102 | 102
+5 | Informatika | 34 | 34
+5 | Iňlis dili | 102 | 102
+5 | Matematika | 170 | 170
+5 | Rus dili | 170 | 170
+5 | Türkmen dili | 170 | 170
+5 | Türkmenistanyň taryhy | 68 | 68
+5 | Ýaşaýyş-durmuş esaslary | 34 | 34
+6 | Biologiýa | 68 | 68
+6 | Edebiýat | 102 | 102
+6 | Geografiýa | 68 | 68
+6 | Informatika | 34 | 34
+6 | Iňlis dili | 102 | 102
+6 | Matematika | 170 | 170
+6 | Rus dili | 136 | 136
+6 | Türkmen dili | 170 | 170
+6 | Ählumumy taryh | 68 | 68
+6 | Ýaşaýyş-durmuş esaslary | 34 | 34
+7 | Biologiýa | 68 | 68
+7 | Edebiýat | 102 | 102
+7 | Fizika | 68 | 68
+7 | Geografiýa | 68 | 68
+7 | Informatika | 34 | 34
+7 | Iňlis dili | 102 | 102
+7 | Matematika | 170 | 170
+7 | Rus dili | 102 | 102
+7 | Türkmen dili | 136 | 136
+7 | Ählumumy taryh | 68 | 68
+7 | Ýaşaýyş-durmuş esaslary | 34 | 34
+8 | Biologiýa | 68 | 68
+8 | Edebiýat | 102 | 102
+8 | Fizika | 68 | 68
+8 | Geografiýa | 68 | 68
+8 | Himiýa | 102 | 102
+8 | Informatika | 34 | 34
+8 | Iňlis dili | 102 | 102
+8 | Matematika | 136 | 136
+8 | Proýektirlemegiň esaslary | 34 | 34
+8 | Rus dili | 68 | 68
+8 | Türkmen dili | 102 | 102
+8 | Türkmenistanyň taryhy | 68 | 68
+8 | Ýaşaýyş-durmuş esaslary | 34 | 34
+9 | Biologiýa | 68 | 68
+9 | Edebiýat | 102 | 102
+9 | Fizika | 102 | 102
+9 | Geografiýa | 68 | 68
+9 | Himiýa | 102 | 102
+9 | Informatika | 34 | 34
+9 | Iňlis dili | 102 | 102
+9 | Matematika | 136 | 136
+9 | Proýektirlemegiň esaslary | 34 | 34
+9 | Rus dili | 34 | 34
+9 | Türkmen dili | 68 | 68
+9 | Türkmenistanyň taryhy | 68 | 68
+9 | Ählumumy taryh | 68 | 68
+9 | Ýaşaýyş-durmuş esaslary | 34 | 34
+10 | Biologiýa | 68 | 68
+10 | Edebiýat | 102 | 102
+10 | Fizika | 136 | 136
+10 | Geografiýa | 68 | 68
+10 | Himiýa | 102 | 102
+10 | Informatika | 34 | 34
+10 | Iňlis dili | 102 | 102
+10 | Matematika | 136 | 136
+10 | Rus dili | 34 | 34
+10 | Türkmen dili | 68 | 68
+10 | Türkmenistanyň taryhy | 68 | 68
+10 | Ählumumy taryh | 34 | 34
+10 | Ýaşaýyş-durmuş esaslary | 34 | 34
+11 | Astronomiýa | 34 | 34
+11 | Biologiýa | 34 | 34
+11 | Edebiýat | 68 | 68
+11 | Ekologiýa | 34 | 34
+11 | Fizika | 68 | 68
+11 | Geografiýa | 34 | 34
+11 | Himiýa | 34 | 34
+11 | IKIT | 34 | 34
+11 | Informatika | 68 | 68
+11 | Iňlis dili | 102 | 102
+11 | Matematika | 136 | 136
+11 | Modelirleme we grafika | 68 | 68
+11 | Rus dili | 34 | 34
+11 | Türkmen dili | 34 | 34
+11 | Türkmenistanyň medeni mirasy | 34 | 34
+11 | Türkmenistanyň taryhy | 34 | 34
+11 | Ykdysadyýetiň esaslary | 34 | 34
+11 | Ählumumy taryh | 34 | 34
+12 | Biologiýa | 34 | 34
+12 | Dünýä medeniýeti | 34 | 34
+12 | Edebiýat | 68 | 68
+12 | Ekologiýa | 34 | 34
+12 | Fizika | 68 | 68
+12 | Geografiýa | 34 | 34
+12 | Himiýa | 68 | 68
+12 | IKIT | 34 | 34
+12 | Informatika | 68 | 68
+12 | Iňlis dili | 102 | 102
+12 | Matematika | 136 | 136
+12 | Modelirleme we grafika | 68 | 68
+12 | Rus dili | 34 | 34
+12 | Türkmen dili | 68 | 68
+12 | Türkmenistanyň taryhy | 34 | 34
+12 | Ykdysadyýetiň esaslary | 34 | 34
+12 | Ählumumy taryh | 34 | 34
