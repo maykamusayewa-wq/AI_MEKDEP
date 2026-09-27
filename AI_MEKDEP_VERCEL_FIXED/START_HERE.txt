@@ -1,0 +1,17 @@
+AI MEKDEP - START
+
+1. First extract the whole ZIP archive to a normal folder.
+   Do NOT run the BAT file from inside the ZIP/RAR window.
+
+2. Open the extracted AI_MEKDEP folder.
+
+3. Double-click start_ai_mekdep.bat.
+
+4. If Windows asks for an OpenAI API key:
+   - paste the key and press Enter, or
+   - press Enter without a key to start the program without AI.
+
+5. The browser should open at:
+   http://127.0.0.1:5000
+
+If the window shows an error, keep it open and take a screenshot of the error.

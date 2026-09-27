@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI MEKDEP — Okuwçy paneli</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:#f3f8ff;color:#172554}
+header{background:linear-gradient(135deg,#0756b8,#08a88a);color:white;padding:20px 7%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+header h2{margin:0}.home{background:white;color:#0756b8;text-decoration:none;padding:10px 18px;border-radius:12px;font-weight:700}
+.container{width:90%;max-width:1320px;margin:34px auto 60px}
+.welcome{background:white;padding:26px;border-radius:22px;box-shadow:0 6px 22px rgba(0,0,0,.06);margin-bottom:28px}
+.welcome h1{color:#0756b8;margin:0 0 8px}.classes{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 32px}
+.class-btn{background:white;border:2px solid #1683dd;color:#0756b8;width:66px;height:56px;border-radius:14px;font-size:18px;font-weight:800;cursor:pointer;transition:.2s}
+.class-btn:hover{transform:translateY(-2px)}.class-btn.active{background:#0756b8;color:white}
+.subjects{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin-top:18px}
+.subject{background:white;border:2px solid transparent;border-radius:20px;padding:22px 14px;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,.07);cursor:pointer;transition:.2s;min-height:150px}
+.subject:hover{transform:translateY(-4px)}.subject.active{border-color:#08a88a;background:#ecfff8}
+.icon{font-size:42px;margin-bottom:8px}.subject h3{color:#0756b8;margin:6px 0 8px;font-size:18px}
+.meta{font-size:12px;color:#64748b;line-height:1.5}.empty{background:white;padding:32px;border-radius:20px;text-align:center;color:#64748b}
+.result{display:none;margin-top:30px;background:white;padding:28px;border-radius:20px;box-shadow:0 6px 20px rgba(0,0,0,.08)}
+.result h2{color:#0756b8;margin-top:0}.start{margin-top:10px;background:linear-gradient(135deg,#0756b8,#08a88a);color:white;border:none;padding:14px 25px;border-radius:12px;font-size:16px;font-weight:800;cursor:pointer}
+.hint{color:#64748b;font-size:14px;margin-top:-10px}
+@media(max-width:650px){header{padding:15px}.container{width:94%}.subjects{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header>
+  <h2>🎓 AI MEKDEP — Okuwçy paneli</h2>
+  <a class="home" href="/">Baş sahypa</a>
+</header>
+
+<div class="container">
+  <div class="welcome">
+    <h1>Hoş geldiň, okuwçy! 👋</h1>
+    <p>Öz synpyňy saýla. Şonda şol synp üçin maksatnamada bar bolan dersler awtomatik görkeziler.</p><p><a class="home" href="/library">📖 Elektron kitaphanany aç</a></p>
+  </div>
+
+  <h2>1. Synpy saýla</h2>
+  <div class="classes">
+    {% for g in range(5, 13) %}
+      <button class="class-btn" onclick="selectClass(this, {{ g }})">{{ g }}</button>
+    {% endfor %}
+  </div>
+
+  <h2>2. Dersi saýla</h2>
+  <p class="hint">Diňe saýlanan synp üçin maksatnamada bar bolan dersler görkezilýär.</p>
+  <div id="subjects" class="subjects">
+    <div class="empty">Ilki synpy saýla.</div>
+  </div>
+
+  <div class="result" id="result">
+    <h2>Saýlawyň taýýar ✅</h2>
+    <p>Synp: <strong id="selectedClass"></strong></p>
+    <p>Ders: <strong id="selectedSubject"></strong></p>
+    <button class="start" onclick="startLesson()">Öwrenmäge başla →</button>
+  </div>
+</div>
+
+<script>
+const SUBJECTS = {{ subjects_by_class|tojson }};
+let chosenClass = null;
+let chosenSubject = null;
+
+function selectClass(button, classNumber){
+  chosenClass = classNumber;
+  chosenSubject = null;
+  document.querySelectorAll(".class-btn").forEach(btn => btn.classList.remove("active"));
+  button.classList.add("active");
+  document.getElementById("result").style.display = "none";
+  renderSubjects();
+}
+
+function renderSubjects(){
+  const area = document.getElementById("subjects");
+  const items = SUBJECTS[String(chosenClass)] || [];
+  if(!items.length){
+    area.innerHTML = '<div class="empty">Bu synp üçin maksatnama tapylmady.</div>';
+    return;
+  }
+  area.innerHTML = items.map(item => `
+    <div class="subject" onclick='selectSubject(this, ${JSON.stringify(item.name)})'>
+      <div class="icon">${item.icon || "📘"}</div>
+      <h3>${item.name}</h3>
+      <div class="meta">
+        ${item.total_hours ? "Jemi " + item.total_hours + " sagat" : "Maksatnama goşuldy"}
+        ${item.source_year ? "<br>Çeşme: " + item.source_year : ""}
+        ${item.track ? "<br>" + item.track : ""}
+      </div>
+    </div>
+  `).join("");
+}
+
+function selectSubject(card, subject){
+  chosenSubject = subject;
+  document.querySelectorAll(".subject").forEach(item => item.classList.remove("active"));
+  card.classList.add("active");
+  document.getElementById("selectedClass").textContent = chosenClass + "-nji synp";
+  document.getElementById("selectedSubject").textContent = chosenSubject;
+  document.getElementById("result").style.display = "block";
+}
+
+function startLesson(){
+  if(!chosenClass || !chosenSubject) return;
+  window.location.href = "/topics?class=" + encodeURIComponent(chosenClass) + "&subject=" + encodeURIComponent(chosenSubject);
+}
+</script>
+</body>
+</html>
